@@ -1,14 +1,20 @@
-#ifndef CL_ARGS_H
-#define CL_ARGS_H
+#ifndef __CL_ARGS__
+#define __CL_ARGS__
 
-#include "map"
+#include <boost/program_options.hpp>
+
+namespace po = boost::program_options;
     
-class ClArgsKeeper {
+class ClArgsParser {
+    po::options_description network_options;
     const std::string PORT_PARAM = "--port";
-    std::map<std::string, std::string> params = {{PORT_PARAM, "8088"}};
+    int port_number = 9000;
+    po::variables_map vm;
     public:
-        ClArgsKeeper(const int& argc, char* argv[]);
-        std::string port();
+        ClArgsParser(const int& argc, char* argv[]);
+        int port();
+        bool help();
+        //we don't need destructor
 };
 
 #endif
