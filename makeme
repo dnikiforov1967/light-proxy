@@ -1,0 +1,14 @@
+CC=g++
+
+all: build
+	
+
+build: compile
+	$(CC) *.o -o light-proxy
+
+compile:
+	$(CC) -c *.cpp support/*.cpp
+
+clean:
+	rm -rf *.o light-proxy
+
