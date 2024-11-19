@@ -12,7 +12,7 @@ class ClArgsParser {
     po::variables_map vm;
     public:
         ClArgsParser(const ClArgsParser&)=delete;
-        ClArgsParser(const int& argc, char* argv[]);
+        ClArgsParser(const int& argc, char**);
         int port();
         bool help();
 };

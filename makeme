@@ -7,7 +7,7 @@ build: compile
 	$(CC) *.o -lboost_program_options -o light-proxy
 
 compile:
-	$(CC) -c *.cpp support/*.cpp
+	$(CC) -c *.cpp support/*.cpp top/*.cpp
 
 clean:
 	rm -rf *.o light-proxy
