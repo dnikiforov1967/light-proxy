@@ -4,7 +4,8 @@
 #include <boost/program_options.hpp>
 
 namespace po = boost::program_options;
-    
+
+//TODO think how to get rid of boost - specific members    
 class ClArgsParser {
     po::options_description network_options;
     int port_number;
@@ -14,7 +15,6 @@ class ClArgsParser {
         ClArgsParser(const int& argc, char* argv[]);
         int port();
         bool help();
-        //we don't need destructor
 };
 
 #endif
