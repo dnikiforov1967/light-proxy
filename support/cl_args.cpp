@@ -1,8 +1,11 @@
 #include "cl_args.h"
 #include <iostream>
 
-ClArgsParser::ClArgsParser(const int& argc, char** argv) 
+ClArgsParser::ClArgsParser() 
     : network_options("Allowed options"), port_number(9000) {
+}
+
+void ClArgsParser::parse(const int& argc, char** argv) {
     network_options.add_options()
     ("help,h", "Show help")
     ("port,p", po::value<int>(&port_number), "Listen port");
